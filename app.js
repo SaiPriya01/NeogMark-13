@@ -1,3 +1,33 @@
+var dateInput=document.querySelector('#bday-input');
+var showBtn=document.querySelector('#show-btn');
+var outputEl=document.querySelector('#result');
+function clickHandler(e){
+    var bdayStr=dateInput.value;
+    if (bdayStr!=''){
+        var listOfDate=bdayStr.split('-');
+        var date={
+            day:Number(listOfDate[2]),
+            month:Number(listOfDate[1]),
+            year:Number(listOfDate[0]),
+        }
+        console.log(date.day,date.month,date.year);
+        var isPalindrome=checkPalindromeForAllFormats(date);
+        if(isPalindrome){
+            outputEl.innerText='yay! your birthday is palindrome';
+        }
+        else{
+            var [ctr,nextDate]=getNextPalindromeDate(date);
+            outputEl.innerText=`The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${ctr} days!` 
+        }
+    }
+    else
+    {
+        outputEl.innerText='please enter your birthday to check'
+    }
+}
+showBtn.addEventListener('click',clickHandler);
+
+
 function reverseStr(str) {
     var listOfChars = str.split('');
     var reversedListOfChar = listOfChars.reverse();
@@ -111,4 +141,3 @@ var date = {
     month: 12,
     year: 2020
 };
-console.log(getNextPalindromeDate(date));

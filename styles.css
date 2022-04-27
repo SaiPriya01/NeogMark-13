@@ -70,11 +70,13 @@ button {
     border-radius: 00.5rem;
     cursor: pointer;
 }
-.result{
-    color: var(--secondary-color);
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 0.3rem;
+#result{
+    text-align: center;
+    margin-top: 1.6rem;
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 1rem;
 }
 .footer {
     background-color: var(--secondary-color);
