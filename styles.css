@@ -44,6 +44,7 @@ label {
     margin-top: 0.7rem;
     font-size: 1.5rem;
     font-weight: 600;
+    color: var(--primary-color);
 }
 input {
     margin-top: 1rem;
